@@ -7,18 +7,6 @@ body {
 }
 
 
-video {
-    /* Disable user interactions */
-    pointer-events: none;
-    touch-action: none;
-    /* Prevent touch gestures */
-}
-
-/* Optional: Make video non-selectable */
-video::selection {
-    background: none;
-}
-
 @media (prefers-color-scheme: dark) {
     #wish-container {
         background-color: rgba(0, 0, 0, 0, 75);
