@@ -114,6 +114,12 @@
 
 
     <script>
+
+        document.addEventListener('DOMContentLoaded', ()=>{
+            let wrapper = document.getElementById('wrapper');
+
+            wrapper.style.animation = 'appear 10s ease';
+        })
         
         function playVideoWithSound() {
             const video = document.getElementById('myVideo');
