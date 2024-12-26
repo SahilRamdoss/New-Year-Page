@@ -114,7 +114,7 @@
 
 
     <script>
-        
+
         function playVideoWithSound() {
             const video = document.getElementById('myVideo');
             const button_wrapper = document.getElementById('wrapper');
@@ -138,6 +138,21 @@
                     .catch(error => {
                         console.error("Error playing video:", error);
                     });
+
+                // Disable long-press context menu on mobile
+                video.addEventListener("contextmenu", (event) => {
+                    event.preventDefault();
+                });
+
+                // Prevent touch gestures on video (like double-tap to play/pause)
+                video.addEventListener("touchstart", (event) => {
+                    event.preventDefault();
+                });
+
+                // Optional: Prevent accidental scrolling
+                video.addEventListener("touchmove", (event) => {
+                    event.preventDefault();
+                });
             });
         }
 

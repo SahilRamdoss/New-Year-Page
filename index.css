@@ -6,35 +6,48 @@ body {
     background-color: black;
 }
 
+
+video {
+    /* Disable user interactions */
+    pointer-events: none;
+    touch-action: none;
+    /* Prevent touch gestures */
+}
+
+/* Optional: Make video non-selectable */
+video::selection {
+    background: none;
+}
+
 @media (prefers-color-scheme: dark) {
-    #wish-container{
-        background-color: rgba(0,0,0,0,75);
+    #wish-container {
+        background-color: rgba(0, 0, 0, 0, 75);
     }
 }
 
-@keyframes disappear{
-    0%{
-        opacity:1;
+@keyframes disappear {
+    0% {
+        opacity: 1;
     }
 
-    100%{
-        opacity:0;
-    }
-}
-
-@keyframes appear{
-    0%{
-        opacity:0;
-    }
-
-    100%{
-        opacity:1;
+    100% {
+        opacity: 0;
     }
 }
 
-#FooterImg{
-    margin-top:5%;
-    width:60%;
+@keyframes appear {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+#FooterImg {
+    margin-top: 5%;
+    width: 60%;
 }
 
 #videoContainer {
@@ -59,19 +72,19 @@ body {
 
 #wish-container {
     padding: 10px 10px 10px 10px;
-    width:70%;
-    height:auto;
-    background: rgba(255, 255, 255,0.75);
+    width: 70%;
+    height: auto;
+    background: rgba(255, 255, 255, 0.75);
     border: solid 4px #A18800;
-    border-radius:15px;
-    display:flex;
-    flex-direction:column;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
     justify-content: flex-start;
-    align-items:center;
+    align-items: center;
 }
 
-#YearImg{
-    width:50%;
+#YearImg {
+    width: 50%;
 }
 
 @media (min-width: 768px) {
@@ -80,8 +93,8 @@ body {
     }
 }
 
-#FrameImg{
-    width:90%;
+#FrameImg {
+    width: 90%;
 }
 
 #videoContainer video {
@@ -204,5 +217,3 @@ button:hover {
     background: radial-gradient(circle farthest-corner at 10% 20%, rgba(255, 94, 247, 1) 17.8%, rgba(2, 245, 255, 1) 100.2%);
     transition: 0.5s;
 }
-
-
