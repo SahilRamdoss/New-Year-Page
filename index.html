@@ -10,7 +10,7 @@
 
 <body>
     <div id="videoContainer">
-        <video id="myVideo" loop playsinline>
+        <video id="myVideo" preload="auto" loop playsinline>
             <source src="./assets/FireworksShortened.mp4" type="video/mp4">
         </video>
         <div id="wish-wrapper">
@@ -114,11 +114,11 @@
 
 
     <script>
+        
         function playVideoWithSound() {
             const video = document.getElementById('myVideo');
             const button_wrapper = document.getElementById('wrapper');
             const videoContainer = document.getElementById('videoContainer');
-
 
             // Fade out the button wrapper
             button_wrapper.style.animation = 'disappear 1s ease';

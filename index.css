@@ -6,6 +6,12 @@ body {
     background-color: black;
 }
 
+@media (prefers-color-scheme: dark) {
+    #wish-container{
+        background-color: rgba(0,0,0,0,75);
+    }
+}
+
 @keyframes disappear{
     0%{
         opacity:1;
