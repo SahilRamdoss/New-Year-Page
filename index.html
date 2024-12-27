@@ -22,6 +22,44 @@
         </div>
     </div>
 
+    <div id="loader">
+        <div class="container">
+            <div class="tree">
+                <div class="branch" style="--x:0">
+                    <span style="--i:0;"></span>
+                    <span style="--i:1;"></span>
+                    <span style="--i:2;"></span>
+                    <span style="--i:3;"></span>
+                </div>
+                <div class="branch" style="--x:1">
+                    <span style="--i:0;"></span>
+                    <span style="--i:1;"></span>
+                    <span style="--i:2;"></span>
+                    <span style="--i:3;"></span>
+                </div>
+                <div class="branch" style="--x:2">
+                    <span style="--i:0;"></span>
+                    <span style="--i:1;"></span>
+                    <span style="--i:2;"></span>
+                    <span style="--i:3;"></span>
+                </div>
+                <div class="branch" style="--x:3">
+                    <span style="--i:0;"></span>
+                    <span style="--i:1;"></span>
+                    <span style="--i:2;"></span>
+                    <span style="--i:3;"></span>
+                </div>
+                <div class="stem">
+                    <span style="--i:0;"></span>
+                    <span style="--i:1;"></span>
+                    <span style="--i:2;"></span>
+                    <span style="--i:3;"></span>
+                </div>
+                <span class="shadow"></span>
+            </div>
+        </div>
+    </div>
+
     <div id="wrapper">
         <div id="buttonContainer">
             <div class="svg-frame">
@@ -118,6 +156,7 @@
             const video = document.getElementById('myVideo');
             const button_wrapper = document.getElementById('wrapper');
             const videoContainer = document.getElementById('videoContainer');
+            const loader = document.getElementById('loader');
 
             // Fade out the button wrapper
             button_wrapper.style.animation = 'disappear 1s ease';
@@ -126,6 +165,19 @@
                 button_wrapper.style.display = 'none'; // Hide the button wrapper after animation ends
 
                 console.log(video.readyState);
+
+                // If video has not yet loaded to play, use the tree loader
+                if (video.readyState <3){
+                    loader.style.display = 'flex';
+
+                    while (video.readyState <3){
+                        
+                    }
+                }
+
+                //Remove tree loader
+                loader.style.display = 'none';
+
                 // Show and animate the video container
                 videoContainer.style.display = 'block'; // Make the video container visible
 
@@ -138,7 +190,7 @@
                     .catch(error => {
                         console.error("Error playing video:", error);
                     });
-                videoContainer.style.animation = 'appear 1s ease'   
+                videoContainer.style.animation = 'appear 1s ease'
             });
         }
 
