@@ -106,7 +106,7 @@ body {
         padding: 10px 10px 10px 10px;
         width: 70%;
         height: auto;
-        background: rgba(255, 255, 255, 0.1);
+        background: rgba(255, 255, 255, 0.75);
         border: solid 4px #A18800;
         border-radius: 15px;
         display: flex;
