@@ -106,7 +106,8 @@ body {
         padding: 10px 10px 10px 10px;
         width: 70%;
         height: auto;
-        background-color: rgba(255, 255, 255, 0.75) !important;
+        background-color: rgba(255, 255, 255, 0.3) !important;
+        mix-blend-mode: normal;
         border: solid 4px #A18800;
         border-radius: 15px;
         display: flex;
