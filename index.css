@@ -16,13 +16,13 @@ body {
     height: 100%;
 }
 
-#loader_container{
-    display:flex;
+#loader_container {
+    display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    align-items:center;
-    width:auto;
-    height:auto;
+    align-items: center;
+    width: auto;
+    height: auto;
 }
 
 .container {
@@ -112,12 +112,12 @@ body {
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
-        align-items: center;   
+        align-items: center;
     }
 }
 
-@media (prefers-color-scheme: light) {
-    #wish-container {
+
+#wish-container {
     padding: 10px 10px 10px 10px;
     width: 70%;
     height: auto;
@@ -128,8 +128,8 @@ body {
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    }    
 }
+
 
 @keyframes disappear {
     0% {
