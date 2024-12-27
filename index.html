@@ -114,19 +114,6 @@
 
 
     <script>
-
-        window.onload = function(){
-            const video = document.getElementById('myVideo'); 
-            video.muted = true; // Mute the video
-            video.play() // Play the video
-                    .then(() => {
-                        console.log("Video is now playing with sound.");
-                    })
-                    .catch(error => {
-                        console.error("Error playing video:", error);
-                    });
-        }
-        
         function playVideoWithSound() {
             const video = document.getElementById('myVideo');
             const button_wrapper = document.getElementById('wrapper');
@@ -143,6 +130,14 @@
                 videoContainer.style.display = 'block'; // Make the video container visible
 
                 video.muted = false; // Unmute the video
+
+                video.play() // Play the video
+                    .then(() => {
+                        console.log("Video is now playing with sound.");
+                    })
+                    .catch(error => {
+                        console.error("Error playing video:", error);
+                    });
                 videoContainer.style.animation = 'appear 1s ease'   
             });
         }
