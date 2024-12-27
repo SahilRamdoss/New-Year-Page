@@ -103,7 +103,16 @@ body {
 
 @media (prefers-color-scheme: dark) {
     #wish-container {
+        padding: 10px 10px 10px 10px;
+        width: 70%;
+        height: auto;
         background-color: rgba(0, 0, 0, 0, 75);
+        border: solid 4px #A18800;
+        border-radius: 15px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;   
     }
 }
 
