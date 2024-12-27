@@ -169,20 +169,18 @@
             button_wrapper.addEventListener('animationend', () => {
                 button_wrapper.style.display = 'none'; // Hide the button wrapper after animation ends
 
-                loader.style.display = 'flex';
+                // Show loader while waiting for the video to load
+                if (video.readyState < 3) {
+                    loader.style.display = 'flex';
 
-                // // Show loader while waiting for the video to load
-                // if (video.readyState < 3) {
-                //     loader.style.display = 'flex';
-
-                //     // Add an event listener to handle when the video is ready to play
-                //     video.addEventListener('canplay', () => {
-                //         loader.style.display = 'none'; // Remove loader when video is ready
-                //         startVideo();
-                //     }, { once: true }); // Use `{ once: true }` to ensure the event fires only once
-                // } else {
-                //     startVideo(); // If video is already ready, start immediately
-                // }
+                    // Add an event listener to handle when the video is ready to play
+                    video.addEventListener('canplay', () => {
+                        loader.style.display = 'none'; // Remove loader when video is ready
+                        startVideo();
+                    }, { once: true }); // Use `{ once: true }` to ensure the event fires only once
+                } else {
+                    startVideo(); // If video is already ready, start immediately
+                }
             });
 
             function startVideo() {
