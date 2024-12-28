@@ -174,7 +174,7 @@
                     loader.style.display = 'flex';
 
                     // Add an event listener to handle when the video is ready to play
-                    video.addEventListener('canplay', () => {
+                    video.addEventListener('canplaythrough', () => {
                         loader.style.display = 'none'; // Remove loader when video is ready
                         startVideo();
                     }, { once: true }); // Use `{ once: true }` to ensure the event fires only once
