@@ -163,32 +163,28 @@
             const videoContainer = document.getElementById('videoContainer');
             const loader = document.getElementById('loader');
 
-            // Fade out the button wrapper
             button_wrapper.style.animation = 'disappear 1s ease';
 
             button_wrapper.addEventListener('animationend', () => {
-                button_wrapper.style.display = 'none'; // Hide the button wrapper after animation ends
+                button_wrapper.style.display = 'none';
 
-                // Show loader while waiting for the video to load
                 if (video.readyState < 3) {
                     loader.style.display = 'flex';
 
-                    // Add an event listener to handle when the video is ready to play
                     video.addEventListener('canplay', () => {
-                        loader.style.display = 'none'; // Remove loader when video is ready
+                        loader.style.display = 'none';
                         startVideo();
-                    }, { once: true }); // Use `{ once: true }` to ensure the event fires only once
+                    }, { once: true });
                 } else {
-                    startVideo(); // If video is already ready, start immediately
+                    startVideo();
                 }
             });
 
             function startVideo() {
-                // Show and animate the video container
-                videoContainer.style.display = 'block'; // Make the video container visible
+
+                videoContainer.style.display = 'block';
                 videoContainer.style.animation = 'appear 1s ease';
 
-                // Unmute and play the video
                 video.muted = false;
                 video.play()
                     .then(() => {
